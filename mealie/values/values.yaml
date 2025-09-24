@@ -5,15 +5,10 @@ env:
 image:
   repository: hkotel/mealie
   tag: v0.4.3
-  pullPolicy: IfNotPresent
-
-service:
-  type: ClusterIP
-  port: 80
 
 persistence:
   config:
     enabled: true
-  storageClass: "local-path"
-  accessMode: ReadWriteOnce
-  size: 1Gi
+    size: 1Gi
+    accessMode: ReadWriteOnce
+    storageClass: "local-path"
