@@ -1,0 +1,18 @@
+env:
+  TZ: "America/New_York"
+  DB_TYPE: "sqlite"
+
+image:
+  repository: hkotel/mealie
+  tag: v0.4.3
+  pullPolicy: IfNotPresent
+
+service:
+  type: ClusterIP
+  port: 80
+
+persistence:
+  enabled: true
+  storageClass: "standard"
+  accessMode: ReadWriteOnce
+  size: 1Gi
