@@ -12,7 +12,8 @@ service:
   port: 80
 
 persistence:
-  enabled: true
-  storageClass: "standard"
+  config:
+    enabled: true
+  storageClass: "local-path"
   accessMode: ReadWriteOnce
   size: 1Gi
