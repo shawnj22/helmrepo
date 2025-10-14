@@ -15,7 +15,8 @@ service:
         protocol: TCP
         targetPort: 9000
         name: http
-
+frontend:
+  enabled: false
 ingress:
   main:
     enabled: true
