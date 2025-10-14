@@ -20,9 +20,8 @@ ingress:
         paths:
           - path: /
             pathType: Prefix
-
-persistence:
-  config:
-    enabled: false
-  data:
-    enabled: false
+ persistence:
+   config:
+     enabled: false
+   data:
+     enabled: false
