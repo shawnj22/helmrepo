@@ -1,5 +1,5 @@
 image:
-  repository: ghcr.io/hay-kot/mealie
+  repository: ghcr.io/mealie-recipes/mealie:nightly
   tag: v1.0.0  # Replace with latest stable tag
 
 env:
