@@ -1,46 +1,25 @@
 image:
-  repository: hkotel/mealie
-  tag: api-v1.0.0beta-2
-  pullPolicy: IfNotPresent
-
-frontend:
-  image:
-    repository: hkotel/mealie
-    tag: frontend-v1.0.0beta-2
-    pullPolicy: IfNotPresent
+  repository: ghcr.io/hay-kot/mealie
+  tag: v1.0.0
 
 env:
-  TZ: "America/New_York"
-
-api:
-  env:
-    TZ: "America/New_York"
+  TZ: America/New_York
+  DB_TYPE: sqlite
 
 service:
-  type: ClusterIP
-  port: 80
+  main:
+    ports:
+      http:
+        port: 9000
 
 ingress:
-  enabled: true
-  annotations:
-    kubernetes.io/ingress.class: nginx
-  hosts:
-    - host: mealie.local
-      paths:
-        - path: /
-          pathType: Prefix
-  tls: []
+  main:
+    enabled: true
+    hosts:
+      - host: mealie.local
+        paths:
+          - path: /
+            pathType: Prefix
 
 persistence:
-  enabled: true
-  storageClass: "standard"
-  accessMode: ReadWriteOnce
-  size: 1Gi
-
-resources:
-  limits:
-    cpu: 500m
-    memory: 512Mi
-  requests:
-    cpu: 250m
-    memory: 256Mi
+  enabled: false
