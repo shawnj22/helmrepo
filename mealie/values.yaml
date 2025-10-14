@@ -1,6 +1,6 @@
 image:
   repository: ghcr.io/hay-kot/mealie
-  tag: v1.0.0
+  tag: v1.0.0  # Replace with latest stable tag
 
 env:
   TZ: America/New_York
@@ -10,12 +10,8 @@ service:
   main:
     ports:
       http:
-        enabled: true
         port: 9000
-        protocol: TCP
-        targetPort: 9000
-frontend:
-  enabled: false
+
 ingress:
   main:
     enabled: true
@@ -24,6 +20,7 @@ ingress:
         paths:
           - path: /
             pathType: Prefix
+
 persistence:
   config:
     enabled: false
