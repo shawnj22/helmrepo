@@ -22,4 +22,7 @@ ingress:
             pathType: Prefix
 
 persistence:
-  enabled: false
+  config:
+    enabled: false
+  data:
+    enabled: false
