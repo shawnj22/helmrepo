@@ -1,28 +1,22 @@
 image:
-  repository: ghcr.io/mealie-recipes/mealie:latest
-  tag: v1.0.0  # Replace with latest stable tag
+  repository: ghcr.io/hay-kot/mealie
+  tag: v1.0.0
+  pullPolicy: IfNotPresent
 
 env:
-  TZ: America/New_York
   DB_TYPE: sqlite
+  TZ: America/New_York
 
 service:
-  main:
-    ports:
-      http:
-        port: 9000
+  type: ClusterIP
+  port: 80
+  targetPort: 9000
 
 ingress:
-  main:
-    enabled: true
-    hosts:
-      - host: mealie.local
-        paths:
-          - path: /
-            pathType: Prefix
-
-persistence:
-  config:
-    enabled: false
-  data:
-    enabled: false
+  enabled: true
+  className: nginx
+  hosts:
+    - host: mealie.local
+      paths:
+        - path: /
+          pathType: Prefix
