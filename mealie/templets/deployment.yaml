@@ -1,0 +1,10 @@
+containers:
+  - name: {{ .Chart.Name }}
+    image: "{{ .Values.image.repository }}:{{ .Values.image.tag }}"
+    ports:
+      - containerPort: {{ .Values.service.targetPort }}
+    env:
+      - name: DB_TYPE
+        value: {{ .Values.env.DB_TYPE }}
+      - name: TZ
+        value: {{ .Values.env.TZ }}
