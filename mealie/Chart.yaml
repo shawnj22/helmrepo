@@ -1,5 +1,0 @@
-apiVersion: v2
-name: mealie
-description: Helm chart for Mealie recipe manager
-version: 0.1.0
-appVersion: "v1.0.0"
