@@ -6,6 +6,7 @@ metadata:
   annotations:
     kubernetes.io/ingress.class: {{ .Values.ingress.className }}
 spec:
+  type: LoadBalancer
   ingressClassName: {{ .Values.ingress.className }}
   rules:
   {{- range .Values.ingress.hosts }}
