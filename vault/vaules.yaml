@@ -1,14 +1,11 @@
 replicaCount: 1
-
 image:
   repository: hashicorp/vault
   tag: "1.15.0"
   pullPolicy: IfNotPresent
-
 service:
   type: ClusterIP
   port: 8200
-
 ingress:
   enabled: true
   className: nginx   # or traefik
