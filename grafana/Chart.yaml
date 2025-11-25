@@ -1,0 +1,7 @@
+apiVersion: v2
+name: grafana
+description: A Helm chart for deploying HashiCorp Vault
+type: application
+version: 0.1.0
+appVersion: "1.15.0"
+
